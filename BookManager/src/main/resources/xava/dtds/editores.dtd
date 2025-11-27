@@ -17,7 +17,6 @@
  accion-iniciar CDATA #IMPLIED
  accion-liberar CDATA #IMPLIED 
  elementos-seleccionables (true|false) "true"
- formato-etiqueta-defecto (normal|pequena|sin-etiqueta) #IMPLIED
 >
 
 <!ELEMENT propiedad EMPTY>

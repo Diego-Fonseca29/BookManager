@@ -2,18 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.BookManager</groupId>
+	<groupId>org.example</groupId>
 	<artifactId>BookManager</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
-		<openxava.version>7.6.2</openxava.version>
+		<openxava.version>7.1</openxava.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!-- OpenXava applications work nicely with Java 1.8, 11, 17, 21 and 25 -->
-		<!-- For Java 25 you have to uncomment the annotation processor plugin in build section below -->
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<!-- OpenXava applications work nicely with Java 1.8, 11 and 17 -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -22,6 +21,17 @@
 			<artifactId>openxava</artifactId>
 			<version>${openxava.version}</version>
 		</dependency>
+        <!-- Para subir archivos e imágenes -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
 		
 		<!-- 
 		To access to your database uncomment the corresponding entry 
@@ -32,9 +42,9 @@
 		
 		<!-- MySQL 
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>		
-    		<version>9.5.0</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>		
+    		<version>8.0.32</version>
 		</dependency>
 		-->
 		
@@ -42,7 +52,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
     		<artifactId>postgresql</artifactId>
-    		<version>42.7.8</version>
+    		<version>42.5.4</version>
 		</dependency>
 		-->
 		
@@ -50,15 +60,16 @@
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
-			<version>23.26.0.0.0</version>
+			<version>21.9.0.0</version>
 		</dependency>
 		-->
 		
-		<!-- AS/400 
+		<!-- AS/400
 		<dependency>
 			<groupId>net.sf.jt400</groupId>
 			<artifactId>jt400</artifactId>
-			<version>21.0.6</version>
+			<version>11.2</version>
+			<classifier>jt400_jdk8</classifier>
 		</dependency>
 		-->
 		
@@ -66,7 +77,7 @@
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
-    		<version>13.2.1.jre8</version>
+    		<version>12.2.0.jre8</version>
 		</dependency>
 		-->
 		
@@ -74,7 +85,7 @@
 		<dependency>
 			<groupId>com.ibm.informix</groupId>
 			<artifactId>jdbc</artifactId>
-			<version>15.0.0.2</version>
+			<version>4.50.9</version>
 		</dependency>
 		-->
 		
@@ -82,15 +93,15 @@
 		<dependency>
 			<groupId>com.ibm.db2</groupId>
 			<artifactId>jcc</artifactId>
-			<version>12.1.2.0</version>
+			<version>11.5.8.0</version>
 		</dependency>
 		-->
 		
-		<!-- Firebird/Jaybird
+		<!-- Firebird
 		<dependency>
 			<groupId>org.firebirdsql.jdbc</groupId>
 			<artifactId>jaybird</artifactId>
-			<version>5.0.10.java8</version>
+			<version>5.0.1.java8</version>
 		</dependency>
 		-->
 		
@@ -99,27 +110,6 @@
 	<build>
 		<finalName>BookManager</finalName>
 		<plugins>
-		
- 			<!-- Uncomment for Java 25. Be sure to specify the same Lombok version you are using. 
-	        <plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-compiler-plugin</artifactId>
-	            <version>3.12.0</version>
-	            <configuration>
-	                <source>${maven.compiler.source}</source>
-	                <target>${maven.compiler.target}</target>
-	                <encoding>${project.build.sourceEncoding}</encoding>
-	                <annotationProcessorPaths>
-	                    <path>
-	                        <groupId>org.projectlombok</groupId>
-	                        <artifactId>lombok</artifactId>
-	                        <version>1.18.40</version>
-	                    </path>
-	                </annotationProcessorPaths>
-	            </configuration>
-	        </plugin>
-        	-->
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -165,15 +155,6 @@
 						WEB-INF/lib/xalan-*.jar,
 						WEB-INF/lib/xercesImpl-*.jar,
 						WEB-INF/lib/xml-apis-*.jar</packagingExcludes>
-				</configuration>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.5</version>
-				<configuration>
-					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 		</plugins>
