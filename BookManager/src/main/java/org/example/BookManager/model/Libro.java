@@ -4,6 +4,32 @@ import javax.persistence.*;
 import org.openxava.annotations.*;
 
 @Entity
+@Views({
+        @View(name = "Default", members = "titulo, autor, isbn"),
+        @View(name = "Completo", members =
+                "titulo, autor;" +
+                        "isbn, añoPublicacion;" +
+                        "descripcion;" +
+                        "cantidadEjemplares"
+        ),
+        @View(name = "Dashboard", members =
+                "informacion [" +
+                        "  'SISTEMA BOOKMANAGER'," +
+                        "  ''," +
+                        "  'Bienvenido al sistema de gestión de biblioteca.'," +
+                        "  ''," +
+                        "  'Funcionalidades disponibles:'," +
+                        "  ' Gestión de Libros'," +
+                        "  ' Gestión de Usuarios'," +
+                        "  ' Gestión de Préstamos'," +
+                        "  ' Reportes y Estadísticas'," +
+                        "  ''," +
+                        "  'Acciones:'," +
+                        "  '• Haz clic en VER ESTADÍSTICAS para ver datos'," +
+                        "  '• Navega entre módulos usando el menú superior'" +
+                        "]"
+        )
+})
 public class Libro {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

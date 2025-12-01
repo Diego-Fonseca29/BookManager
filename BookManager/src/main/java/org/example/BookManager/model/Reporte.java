@@ -14,6 +14,7 @@ import java.util.Date;
                         "prestamosVencidos, librosDisponibles, librosPrestados"
         )
 })
+@Tab(properties = "nombreReporte, fechaGeneracion, totalLibros, totalUsuarios, totalPrestamosActivos, prestamosVencidos, librosDisponibles, librosPrestados")
 public class Reporte {
 
     @Id
@@ -26,59 +27,51 @@ public class Reporte {
     private String nombreReporte;
 
     @Column(name = "FECHA_GENERACION")
-    @ReadOnly
     private Date fechaGeneracion;
 
     @Column(name = "TOTAL_LIBROS")
-    @ReadOnly
-    private Integer totalLibros = 50;
+    private Integer totalLibros;
 
     @Column(name = "TOTAL_USUARIOS")
-    @ReadOnly
-    private Integer totalUsuarios = 25;
+    private Integer totalUsuarios;
 
     @Column(name = "TOTAL_PRESTAMOS_ACTIVOS")
-    @ReadOnly
-    private Integer totalPrestamosActivos = 15;
+    private Integer totalPrestamosActivos;
 
     @Column(name = "PRESTAMOS_VENCIDOS")
-    @ReadOnly
-    private Integer prestamosVencidos = 3;
+    private Integer prestamosVencidos;
 
     @Column(name = "LIBROS_DISPONIBLES")
-    @ReadOnly
-    private Integer librosDisponibles = 35;
+    private Integer librosDisponibles;
 
     @Column(name = "LIBROS_PRESTADOS")
-    @ReadOnly
-    private Integer librosPrestados = 15;
+    private Integer librosPrestados;
 
-    @PrePersist
-    public void prePersist() {
-        if (fechaGeneracion == null) {
-            fechaGeneracion = new Date();
-        }
-        if (nombreReporte == null || nombreReporte.trim().isEmpty()) {
-            nombreReporte = "Reporte - " + fechaGeneracion;
-        }
-    }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
     public String getNombreReporte() { return nombreReporte; }
     public void setNombreReporte(String nombreReporte) { this.nombreReporte = nombreReporte; }
+
     public Date getFechaGeneracion() { return fechaGeneracion; }
     public void setFechaGeneracion(Date fechaGeneracion) { this.fechaGeneracion = fechaGeneracion; }
-    public Integer getTotalLibros() { return totalLibros != null ? totalLibros : 50; }
-    public void setTotalLibros(Integer totalLibros) { this.totalLibros = totalLibros != null ? totalLibros : 50; }
-    public Integer getTotalUsuarios() { return totalUsuarios != null ? totalUsuarios : 25; }
-    public void setTotalUsuarios(Integer totalUsuarios) { this.totalUsuarios = totalUsuarios != null ? totalUsuarios : 25; }
-    public Integer getTotalPrestamosActivos() { return totalPrestamosActivos != null ? totalPrestamosActivos : 15; }
-    public void setTotalPrestamosActivos(Integer totalPrestamosActivos) { this.totalPrestamosActivos = totalPrestamosActivos != null ? totalPrestamosActivos : 15; }
-    public Integer getPrestamosVencidos() { return prestamosVencidos != null ? prestamosVencidos : 3; }
-    public void setPrestamosVencidos(Integer prestamosVencidos) { this.prestamosVencidos = prestamosVencidos != null ? prestamosVencidos : 3; }
-    public Integer getLibrosDisponibles() { return librosDisponibles != null ? librosDisponibles : 35; }
-    public void setLibrosDisponibles(Integer librosDisponibles) { this.librosDisponibles = librosDisponibles != null ? librosDisponibles : 35; }
-    public Integer getLibrosPrestados() { return librosPrestados != null ? librosPrestados : 15; }
-    public void setLibrosPrestados(Integer librosPrestados) { this.librosPrestados = librosPrestados != null ? librosPrestados : 15; }
+
+    public Integer getTotalLibros() { return totalLibros; }
+    public void setTotalLibros(Integer totalLibros) { this.totalLibros = totalLibros; }
+
+    public Integer getTotalUsuarios() { return totalUsuarios; }
+    public void setTotalUsuarios(Integer totalUsuarios) { this.totalUsuarios = totalUsuarios; }
+
+    public Integer getTotalPrestamosActivos() { return totalPrestamosActivos; }
+    public void setTotalPrestamosActivos(Integer totalPrestamosActivos) { this.totalPrestamosActivos = totalPrestamosActivos; }
+
+    public Integer getPrestamosVencidos() { return prestamosVencidos; }
+    public void setPrestamosVencidos(Integer prestamosVencidos) { this.prestamosVencidos = prestamosVencidos; }
+
+    public Integer getLibrosDisponibles() { return librosDisponibles; }
+    public void setLibrosDisponibles(Integer librosDisponibles) { this.librosDisponibles = librosDisponibles; }
+
+    public Integer getLibrosPrestados() { return librosPrestados; }
+    public void setLibrosPrestados(Integer librosPrestados) { this.librosPrestados = librosPrestados; }
 }

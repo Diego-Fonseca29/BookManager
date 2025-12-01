@@ -3,6 +3,12 @@
 
 <application name="BookManager">
 
+    <module name="Dashboard">
+        <model name="Libro"/>
+        <view name="Dashboard"/>
+        <controller name="Typical"/>
+    </module>
+
     <module name="Libro">
         <model name="Libro"/>
         <controller name="Typical"/>
@@ -22,6 +28,11 @@
         <model name="Reporte"/>
         <view name="Estadisticas"/>
         <controller name="Typical"/>
+    </module>
+
+    <module name="Multa">
+        <model name="Multa"/>
+        <controller name="Multas"/>
     </module>
 
 </application>

@@ -12,7 +12,8 @@
         <class>org.example.BookManager.model.Libro</class>
         <class>org.example.BookManager.model.Usuario</class>
         <class>org.example.BookManager.model.Prestamo</class>
-        <class>org.example.BookManager.model.Reporte</class>  <!-- ← AGREGAR ESTA LÍNEA -->
+        <class>org.example.BookManager.model.Reporte</class>
+        <class>org.example.BookManager.model.Multa</class>
 
         <!-- Entidades de OpenXava -->
         <class>org.openxava.session.GalleryImage</class>
@@ -46,6 +47,7 @@
         <class>org.example.BookManager.model.Usuario</class>
         <class>org.example.BookManager.model.Prestamo</class>
         <class>org.example.BookManager.model.Reporte</class>
+        <class>org.example.BookManager.model.Multa</class>
 
         <!-- Entidades de OpenXava para test -->
         <class>org.openxava.web.editors.DiscussionComment</class>
