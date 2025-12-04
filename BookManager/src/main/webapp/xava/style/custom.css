@@ -1,3 +1,141 @@
-/*
-Put here your own style
-*/
+/* ============================================= */
+/* PANTALLA DE INICIO DE SESIÓN - FONDO OSCURO */
+/* ============================================= */
+
+/* Fondo de la pantalla de login */
+.ox-login-page {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+}
+
+/* Contenedor del formulario de login */
+.ox-login-module {
+    background-color: rgba(52, 73, 94, 0.9) !important;
+    border: 1px solid #3498db !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Títulos en login */
+.ox-login-module h1 {
+    color: #ecf0f1 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Labels en login */
+.ox-login-module label {
+    color: #bdc3c7 !important;
+    font-weight: bold !important;
+}
+
+/* Campos de input en login */
+.ox-login-module input[type="text"],
+.ox-login-module input[type="password"] {
+    background-color: #34495e !important;
+    border: 1px solid #3498db !important;
+    border-radius: 5px !important;
+    color: #ecf0f1 !important;
+    padding: 10px !important;
+}
+
+/* Campos de input al enfocar */
+.ox-login-module input[type="text"]:focus,
+.ox-login-module input[type="password"]:focus {
+    border-color: #1abc9c !important;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.6) !important;
+    outline: none !important;
+}
+
+/* ============================================= */
+/* BOTONES AZUL CLARO - PARA TODA LA APLICACIÓN */
+/* ============================================= */
+
+/* Botones principales */
+.ox-button,
+.ox-image-link,
+.ui-button {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    border: 1px solid #2980b9 !important;
+    border-radius: 6px !important;
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Efecto hover en botones */
+.ox-button:hover,
+.ox-image-link:hover,
+.ui-button:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Botones presionados */
+.ox-button:active,
+.ox-image-link:active,
+.ui-button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ============================================= */
+/* INTERFAZ PRINCIPAL - TONOS OSCUROS */
+/* ============================================= */
+
+/* Barra superior */
+.ox-top-bar {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    border-bottom: 2px solid #3498db !important;
+}
+
+/* Menú lateral */
+.ox-modules-list {
+    background-color: #34495e !important;
+    border-right: 1px solid #2c3e50 !important;
+}
+
+/* Items del menú */
+.ox-module-list-item {
+    color: #bdc3c7 !important;
+    border-bottom: 1px solid #2c3e50 !important;
+}
+
+/* Items del menú al pasar mouse */
+.ox-module-list-item:hover {
+    background-color: #3498db !important;
+    color: white !important;
+}
+
+/* Título de la aplicación */
+.ox-application-name {
+    color: #3498db !important;
+    font-weight: bold !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================= */
+/* BOTONES ESPECÍFICOS */
+/* ============================================= */
+
+/* Botón Grabar/Guardar */
+.ox-button[title="Grabar"],
+.ox-button[title="Guardar"] {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
+    border-color: #27ae60 !important;
+}
+
+/* Botón Eliminar/Borrar */
+.ox-button[title="Borrar"],
+.ox-button[title="Eliminar"] {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+    border-color: #e74c3c !important;
+}
+
+/* Botón Nuevo/Agregar */
+.ox-button[title="Nuevo"],
+.ox-button[title="Agregar"] {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%) !important;
+    border-color: #9b59b6 !important;
+}

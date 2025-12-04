@@ -1,32 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1"
-             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
 
     <persistence-unit name="default">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <non-jta-data-source>java://comp/env/jdbc/BookManagerDS</non-jta-data-source>
+
+        <!-- TUS ENTIDADES -->
+        <class>org.example.BookManager.model.Libro</class>
+        <class>org.example.BookManager.model.Usuario</class>
+        <class>org.example.BookManager.model.Prestamo</class>
+        <class>org.example.BookManager.model.Reporte</class>
+        <class>org.example.BookManager.model.Multa</class>
+
+        <!-- Entidades de OpenXava -->
+        <class>org.openxava.session.GalleryImage</class>
+        <class>org.openxava.web.editors.DiscussionComment</class>
+        <class>com.openxava.naviox.model.ConfigurationRecord</class>
+        <class>com.openxava.naviox.model.Folder</class>
+        <class>com.openxava.naviox.model.History</class>
+        <class>com.openxava.naviox.model.Module</class>
+        <class>com.openxava.naviox.model.ModuleRights</class>
+        <class>com.openxava.naviox.model.Organization</class>
+        <class>com.openxava.naviox.model.Role</class>
+        <class>com.openxava.naviox.model.SessionRecord</class>
+        <class>com.openxava.naviox.model.SSORecord</class>
+        <class>com.openxava.naviox.model.User</class>
+        <class>com.openxava.naviox.model.LDAPConfiguration</class>
+
         <properties>
-            <!-- 1. Configuración del Driver y URL de Conexión a SQL Server -->
-            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-            <!-- ¡IMPORTANTE! Reemplace los valores de la URL, user y password -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=BibliotecaDB;encrypt=true;trustServerCertificate=true" />
-            <property name="javax.persistence.jdbc.user" value="localhost" />
-            <property name="javax.persistence.jdbc.password" value="bigmaster34" />
-
-            <!-- 2. Dialecto de Hibernate para SQL Server -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
-
-            <!-- 3. Comportamiento de la Base de Datos (Creación de Tablas ) -->
-            <!-- 'update' creará/actualizará las tablas automáticamente (hbm2ddl.auto) -->
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-
-            <!-- 4. Mostrar y formatear SQL (útil para depuración) -->
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-
-            <!-- 5. Configuración de OpenXava -->
-            <property name="openxava.converters.default" value="true"/>
+            <property name="javax.persistence.schema-generation.database.action" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
+
+    <!-- JUnit Hypersonic -->
+    <persistence-unit name="junit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- TUS ENTIDADES PARA TEST -->
+        <class>org.example.BookManager.model.Libro</class>
+        <class>org.example.BookManager.model.Usuario</class>
+        <class>org.example.BookManager.model.Prestamo</class>
+        <class>org.example.BookManager.model.Reporte</class>
+        <class>org.example.BookManager.model.Multa</class>
+
+        <!-- Entidades de OpenXava para test -->
+        <class>org.openxava.web.editors.DiscussionComment</class>
+        <class>com.openxava.naviox.model.ConfigurationRecord</class>
+        <class>com.openxava.naviox.model.Folder</class>
+        <class>com.openxava.naviox.model.History</class>
+        <class>com.openxava.naviox.model.Module</class>
+        <class>com.openxava.naviox.model.ModuleRights</class>
+        <class>com.openxava.naviox.model.Organization</class>
+        <class>com.openxava.naviox.model.Role</class>
+        <class>com.openxava.naviox.model.SessionRecord</class>
+        <class>com.openxava.naviox.model.SSORecord</class>
+        <class>com.openxava.naviox.model.User</class>
+
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:hsql://localhost:1666"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+        </properties>
+    </persistence-unit>
+
 </persistence>
