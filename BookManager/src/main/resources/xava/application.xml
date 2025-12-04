@@ -34,5 +34,48 @@
         <model name="Multa"/>
         <controller name="Multas"/>
     </module>
+    <module name="Autor">
+        <model name="Autor"/>
+        <controller name="Typical"/>
+        <controller name="BuscarLibrosAutor"/>
+    </module>
 
+    <module name="Editorial">
+        <model name="Editorial"/>
+        <controller name="Typical"/>
+        <controller name="BuscarLibrosEditorial"/>
+    </module>
+
+    <module name="Categoria">
+        <model name="Categoria"/>
+        <controller name="Typical"/>
+        <controller name="BuscarLibrosCategoria"/>
+    </module>
+
+    <module name="Empleado">
+        <model name="Empleado"/>
+        <controller name="Typical"/>
+    </module>
+
+    <module name="Reserva">
+        <model name="Reserva"/>
+        <controller name="Typical"/>
+        <controller name="Reserva"/>
+    </module>
+
+    <module name="Configuracion">
+        <model name="Configuracion"/>
+        <controller name="Typical"/>
+    </module>
+
+    <module name="Auditoria">
+        <model name="Auditoria"/>
+        <view name="ReadOnly"/>
+        <controller name="Typical"/>
+    </module>
+
+    <module name="ReporteLibrosPopulares">
+        <model name="LibroPopular"/>
+        <controller name="Reportes"/>
+    </module>
 </application>
