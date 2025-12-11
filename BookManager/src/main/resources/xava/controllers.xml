@@ -3,54 +3,63 @@
 
 <controllers>
 
-    <controller name="DashboardController">
-        <action name="verEstadisticas"
-                class="org.example.BookManager.controller.DashboardController"
-                hidden="false"
-                keystroke="F5"
-                icon="dashboard"/>
+    <controller name="Dashboard">
+        <action name="Init"
+                class="org.example.BookManager.actions.InitDashboardAction"
+                mode="detail"
+                on-init="true"
+                hidden="true"/>
+    </controller>
+
+    <controller name="Reserva">
+        <action name="marcarCompletada"
+                class="org.example.BookManager.controller.MarcarReservaCompletadaAction"
+                mode="detail"
+                icon="check"
+                image="check.gif"
+                keystroke="Control R"/>
+        <action name="marcarCancelada"
+                class="org.example.BookManager.controller.MarcarReservaCanceladaAction"
+                mode="detail"
+                icon="cancel"
+                image="cancel.gif"
+                keystroke="Control C"/>
+    </controller>
+
+    <controller name="Reportes">
+        <action name="generarReporteLibrosPopulares"
+                class="org.example.BookManager.controller.ReporteLibrosPopularesAction"
+                icon="print"
+                image="print.gif"/>
+    </controller>
+
+    <controller name="BuscarLibrosAutor">
+        <action name="buscarLibros"
+                class="org.example.BookManager.controller.BuscarLibrosPorAutorAction"
+                icon="search"
+                image="search.gif"/>
+    </controller>
+
+    <controller name="BuscarLibrosCategoria">
+        <action name="buscarLibros"
+                class="org.example.BookManager.controller.BuscarLibrosPorCategoriaAction"
+                icon="search"
+                image="search.gif"/>
+    </controller>
+
+    <controller name="BuscarLibrosEditorial">
+        <action name="buscarLibros"
+                class="org.example.BookManager.controller.BuscarLibrosPorEditorialAction"
+                icon="search"
+                image="search.gif"/>
+    </controller>
+
+    <controller name="Dashboard">
+        <action name="Init"
+                class="org.example.BookManager.actions.InitDashboardAction"
+                mode="detail"
+                on-init="true"
+                hidden="true"/>
     </controller>
 
 </controllers>
-<controller name="Reserva">
-<action name="marcarCompletada"
-        class="org.example.BookManager.controller.MarcarReservaCompletadaAction"
-        mode="detail"
-        icon="check"
-        image="check.gif"
-        keystroke="Control R"/>
-<action name="marcarCancelada"
-        class="org.example.BookManager.controller.MarcarReservaCanceladaAction"
-        mode="detail"
-        icon="cancel"
-        image="cancel.gif"
-        keystroke="Control C"/>
-</controller>
-
-<controller name="Reportes">
-<action name="generarReporteLibrosPopulares"
-        class="org.example.BookManager.controller.ReporteLibrosPopularesAction"
-        icon="print"
-        image="print.gif"/>
-</controller>
-
-<controller name="BuscarLibrosAutor">
-<action name="buscarLibros"
-        class="org.example.BookManager.controller.BuscarLibrosPorAutorAction"
-        icon="search"
-        image="search.gif"/>
-</controller>
-
-<controller name="BuscarLibrosCategoria">
-<action name="buscarLibros"
-        class="org.example.BookManager.controller.BuscarLibrosPorCategoriaAction"
-        icon="search"
-        image="search.gif"/>
-</controller>
-
-<controller name="BuscarLibrosEditorial">
-<action name="buscarLibros"
-        class="org.example.BookManager.controller.BuscarLibrosPorEditorialAction"
-        icon="search"
-        image="search.gif"/>
-</controller>

@@ -4,9 +4,8 @@
 <application name="BookManager">
 
     <module name="Dashboard">
-        <model name="Libro"/>
-        <view name="Dashboard"/>
-        <controller name="Typical"/>
+        <model name="Dashboard"/>
+        <controller name="Dashboard"/>
     </module>
 
     <module name="Libro">
@@ -34,6 +33,7 @@
         <model name="Multa"/>
         <controller name="Multas"/>
     </module>
+
     <module name="Autor">
         <model name="Autor"/>
         <controller name="Typical"/>
